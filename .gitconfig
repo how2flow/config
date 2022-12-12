@@ -1,8 +1,6 @@
 [user]
   name =
   email =
-[color]
-  ui = auto
 [alias]
   co = checkout
   cy = cherry-pick
@@ -10,7 +8,11 @@
   ci = commit
   st = status
   logs = log --oneline --branches --graph
+[color]
+  ui = auto
 [core]
   editor = vim
 [diff]
   submodule = log
+[http]
+    sslVerify = false
