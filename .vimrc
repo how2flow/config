@@ -82,7 +82,6 @@ call vundle#begin()
 call vundle#end() "$ vim +PluginInstall +qall
 
 set background=dark
-colorscheme gruvbox
 
 "
 " ctrlp.vim setting
