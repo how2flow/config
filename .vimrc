@@ -21,10 +21,6 @@ set ruler
 set fileencodings=tuf8,euc-kr
 set clipboard=unnamedplus
 
-" curl -O https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-set background=dark
-colorscheme gruvbox
-
 "
 " About ctags & cscope
 "
@@ -68,7 +64,8 @@ nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
 " :PluginClean		
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'           "vim plugin management
+    Plugin 'VundleVim/Vundle.vim' "vim plugin management
+	Plugin 'morhetz/gruvbox' " curl -O https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
 	"check install vim color scheme
 	Plugin 'majutsushi/tagbar'
 	Plugin 'scrooloose/nerdtree'
@@ -83,6 +80,9 @@ call vundle#begin()
     Plugin 'AutoComplPop'                   "auto compl
 	Plugin 'taglist-plus'
 call vundle#end() "$ vim +PluginInstall +qall
+
+set background=dark
+colorscheme gruvbox
 
 "
 " ctrlp.vim setting
