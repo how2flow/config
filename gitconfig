@@ -15,4 +15,4 @@
 [diff]
   submodule = log
 [http]
-    sslVerify = false
+  sslVerify = false
