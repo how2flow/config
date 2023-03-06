@@ -10,9 +10,9 @@ call vundle#begin()
 	Plugin 'how2flow/Vundle.vim' " vim plugin management
 	Plugin 'morhetz/gruvbox' " curl -O https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
 	" check install vim color scheme
-	Plugin 'majutsushi/tagbar'
-	Plugin 'scrooloose/nerdtree'
-	Plugin 'nathanaelkane/vim-indent-guides'
+	Plugin 'preservim/tagbar'
+	Plugin 'preservim/nerdtree'
+	Plugin 'preservim/vim-indent-guides'
 	" git
 	Plugin 'airblade/vim-gitgutter' " vim with git status(added, modified, and removed lines)
 	Plugin 'tpope/vim-fugitive' " vim with git command(e.g., Gdiff)
