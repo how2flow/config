@@ -24,7 +24,7 @@ call vundle#begin()
   Plugin 'AutoComplPop'                   " auto compl
   Plugin 'taglist-plus'
   " openai
-  if has ('openai')
+  if has ('~/.config/openaiapirc')
     Plugin 'tom-doerr/vim_codex'
   endif
 call vundle#end() "$ vim +PluginInstall +qall
