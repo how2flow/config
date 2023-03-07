@@ -54,31 +54,17 @@ filetype plugin indent on
 
 " set by file types
 augroup filetypedetect
-  au Filetype c set
+  au Filetype c,cpp set
     \ cindent
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
-  au Filetype cpp set
-    \ cindent
-    \ tabstop=4
-    \ softtabstop=4
-  au Filetype python set
+  au Filetype python,sh set
     \ tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
     \ expandtab
-  au Filetype rust set
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ expandtab
-  au Filetype sh set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ expandtab
-  au Filetype vim set
+  au Filetype rust,vim set
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
