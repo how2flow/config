@@ -68,17 +68,17 @@ augroup filetypedetect
     \ softtabstop=2
     \ shiftwidth=2
     \ expandtab
-  au filetype rust set
+  au Filetype rust set
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
     \ expandtab
-  au filetype sh set
+  au Filetype sh set
     \ tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
     \ expandtab
-  au filetype vim set
+  au Filetype vim set
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
