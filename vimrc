@@ -45,7 +45,7 @@ set laststatus=2 " turn on bottom bar.
 set showmatch " Show parentheses.
 set smartindent " reacts to the syntax/style of the code i'm editing.
 set ruler " display row, column of cursor.
-set fileencodings=tuf8,euc-kr
+set fileencodings=utf-8 " origin: tuf8,euc-kr
 set clipboard=unnamedplus " computer shares clipboard with vi.
 set t_Co=256
 set background=dark
