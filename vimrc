@@ -23,10 +23,6 @@ call vundle#begin()
   " auto
   Plugin 'AutoComplPop'                   " auto compl
   Plugin 'taglist-plus'
-  " openai
-  if has ('~/.config/openaiapirc')
-    Plugin 'tom-doerr/vim_codex'
-  endif
 call vundle#end() "$ vim +PluginInstall +qall
 
 "
@@ -146,6 +142,3 @@ nmap <F3> :bnext<CR>
 nmap <F4> :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
-
-nnoremap  <C-x> :CreateCompletion<CR>
-inoremap  <C-x> <Esc>li<C-g>u<Esc>l:CreateCompletion<CR>
