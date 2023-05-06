@@ -1,0 +1,32 @@
+name: 'ubuntu-config (docker)'
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'ubuntu/docker/latest/*'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/Checkout@v3
+
+      - name: 'Docker upload'
+        uses: how2flow/upload-docker-action@v1
+        with:
+          context: 'docker/ubuntu/latest'
+          repository: 'ubuntu'
+          release: 'config'
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
