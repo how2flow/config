@@ -25,10 +25,10 @@ ssh_config() {
   DISTRO="${release##*=}"
   case "${DISTRO}" in
     jammy)
-    if [ -x "$(command -v ssh)" ]; then
-      echo "    HostKeyAlgorithms +ssh-rsa" >> "${ssh_config}"
-      echo "    PubkeyAcceptedKeyTypes +ssh-rsa" >> "${ssh_config}"
-    fi
+      if [ -x "$(command -v ssh)" ]; then
+        echo "    HostKeyAlgorithms +ssh-rsa" >> "${ssh_config}"
+        echo "    PubkeyAcceptedKeyTypes +ssh-rsa" >> "${ssh_config}"
+      fi
       ;;
   esac
 
