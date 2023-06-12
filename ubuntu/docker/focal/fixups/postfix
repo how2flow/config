@@ -21,7 +21,7 @@ download_app_configs() {
     wget -O "${home}"/.vimrc $WGET_FLAG "https://raw.githubusercontent.com/how2flow/config/master/ubuntu/vimrc"
 
     # download configs for vim plugin.
-    mkdir -p "${home}"/.vim/colors "${CONFDIR}"/.vim/bundle
+    mkdir -p "${home}"/.vim/colors
     git clone "https://github.com/VundleVim/Vundle.vim.git" "${home}"/.vim/bundle/Vundle.vim
     wget -O "${home}"/.vim/colors/gruvbox.vim $WGET_FLAG "https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim"
 
