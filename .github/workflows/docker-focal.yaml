@@ -27,6 +27,6 @@ jobs:
         with:
           context: 'ubuntu/docker/focal'
           repository: 'config'
-          release: 'ubuntu-focal'
+          release: 'focal'
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
