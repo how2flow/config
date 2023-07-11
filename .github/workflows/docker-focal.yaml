@@ -1,0 +1,32 @@
+name: 'ubuntu-config (docker)'
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'ubuntu/docker/focal/*'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+
+jobs:
+  docker:
+    runs-on: ubuntu-focal
+    steps:
+      - name: 'Checkout'
+        uses: actions/Checkout@v3
+
+      - name: 'Docker upload'
+        uses: how2flow/upload-docker-action@v1
+        with:
+          context: 'ubuntu/docker/focal'
+          repository: 'config'
+          release: 'ubuntu-focal'
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
