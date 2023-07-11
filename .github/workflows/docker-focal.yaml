@@ -1,4 +1,4 @@
-name: 'ubuntu-config (docker)'
+name: 'ubuntu-focal (docker)'
 
 on:
   push:
