@@ -1,7 +1,8 @@
 # Dockerfile
 FROM ubuntu:focal
-LABEL author="how2flow (Steve Jeong)"
-LABEL version="3.0.0"
+LABEL author="Steve Jeong"
+LABEL e-mail="steve@how2flow.net"
+LABEL version="3.0.1"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
