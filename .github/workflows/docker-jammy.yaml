@@ -1,11 +1,11 @@
-name: 'ubuntu-latest (docker)'
+name: 'ubuntu-jammy (docker)'
 
 on:
   push:
     branches:
       - 'master'
     paths:
-      - 'ubuntu/docker/latest/*'
+      - 'ubuntu/docker/jammy/*'
   workflow_dispatch:
     inputs:
       logLevel:
@@ -17,7 +17,7 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-jammy
     steps:
       - name: 'Checkout'
         uses: actions/Checkout@v3
@@ -25,8 +25,8 @@ jobs:
       - name: 'Docker upload'
         uses: how2flow/upload-docker-action@v1
         with:
-          context: 'ubuntu/docker/latest'
+          context: 'ubuntu/docker/jammy'
           repository: 'config'
-          release: 'ubuntu'
+          release: 'jammy'
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
