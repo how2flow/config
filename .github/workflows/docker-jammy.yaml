@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'master'
-    paths:
-      - 'ubuntu/docker/jammy/*'
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
     inputs:
       logLevel:
@@ -25,7 +25,7 @@ jobs:
       - name: 'Docker upload'
         uses: how2flow/upload-docker-action@v1
         with:
-          context: './ubuntu/docker/jammy'
+          context: ./ubuntu/docker/jammy
           repository: 'config'
           release: 'jammy'
           username: ${{ secrets.DOCKERHUB_USERNAME }}
