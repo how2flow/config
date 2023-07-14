@@ -25,7 +25,7 @@ jobs:
       - name: 'Docker upload'
         uses: how2flow/upload-docker-action@v1
         with:
-          context: 'ubuntu/docker/focal'
+          context: './ubuntu/docker/focal'
           repository: 'config'
           release: 'focal'
           username: ${{ secrets.DOCKERHUB_USERNAME }}
