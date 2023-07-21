@@ -20,6 +20,4 @@ USER root
 WORKDIR /root
 COPY fixups fixups
 RUN chmod -R +x fixups
-
-WORKDIR /root/fixups
-RUN ./prefix
+RUN ./fixups/prefix
