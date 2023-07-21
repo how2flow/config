@@ -11,7 +11,7 @@ edit TODO for your develop env<br>
 # Dockerfile with how2flow/config:{tag}
 
 # ===== No Edit =====
-FROM how2flow/config:ubuntu
+FROM how2flow/config:{distro}
 # ===================
 
 # ===== Edit you want =====
