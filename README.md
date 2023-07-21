@@ -24,14 +24,10 @@ USER root
 WORKDIR /root
 COPY fixups fixups
 RUN chmod -R +x fixups
+RUN ./fixups/postfix $ID $PASSWORD
 # ===================
 
-# ===== No Edit =====
-WORKDIR /root/fixups
-RUN ./postfix $ID $PASSWORD
-# ===================
-
-# TODO ...
+# TODO in /root ...
 
 # ===== No Edit =====
 RUN rm -rf fixups
@@ -43,6 +39,6 @@ WORKDIR /home/${ID}
 RUN vim +PluginInstall +qall
 # ===================
 
-# TODO ...
+# TODO in /home/${ID} ...
 
 ```
