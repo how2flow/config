@@ -10,9 +10,9 @@ edit TODO for your develop env<br>
 ```
 # Dockerfile with how2flow/config:{tag}
 
-# ===== No Edit =====
+# ===== Edit only '{distro}' =====
 FROM how2flow/config:{distro}
-# ===================
+# ================================
 
 # ===== Edit you want =====
 ENV ID="user" \
