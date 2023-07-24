@@ -2,7 +2,7 @@
 FROM ubuntu:focal
 LABEL author="Steve Jeong"
 LABEL e-mail="steve@how2flow.net"
-LABEL version="3.0.1"
+LABEL version="20230724"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -17,7 +17,6 @@ ENV ID="user" \
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 USER root
-WORKDIR /root
-COPY fixups fixups
-RUN chmod -R +x fixups
-RUN ./fixups/prefix
+ADD *.sh /
+RUN chmod a+x /*.sh
+RUN /prefix.sh
