@@ -15,7 +15,7 @@ FROM how2flow/config:{distro}
 # ===================
 
 # ===== Edit you want =====
-ENV ID="user"
+ENV ID="user" \
   PASSWORD="password"
 # =========================
 
