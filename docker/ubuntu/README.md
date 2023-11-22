@@ -6,34 +6,65 @@ edit TODO for your develop env<br>
 ```
 # Dockerfile with how2flow/config:{tag}
 
-# ===== Edit only '{distro}' =====
-FROM how2flow/config:{distro}
-# ================================
+# ===== [Edit only '{tag}'] =====
+FROM how2flow/config:{tag}
+# ==================================
 
-# ===== Edit you want =====
+# ======== [Edit you want] =========
 ENV ID="user" \
   PASSWORD="password"
-# =========================
+# ==================================
 
-# ===== No Edit =====
+# =========== [No Edit] ============
 USER root
 RUN /postfix.sh $ID $PASSWORD
-# Use it when you need to distribute an official image
+# ==================================
+
+# ========= [Active or Not] ========
+
+# Use it when you need to distribute
+# an official image
+
+# When using postrm script,
+# "RUN vim + Plugin Install + qall"
+# must be disabled.
+
 # RUN /postrm.sh $ID
-# ===================
+# ==================================
 
-# TODO with root permission ...
+# ===== [Edit TODO with ROOT.] =====
 
-# ===== No Edit =====
+# start
+
+
+
+
+
+
+
+
+
+# finish
 RUN rm -f /*.sh
-# ===================
+# ==================================
 
-# ===== No Edit =====
+# ======== [Change Account] ========
 USER ${ID}
 WORKDIR /home/${ID}
-RUN vim +PluginInstall +qall
-# ===================
+# ==================================
 
-# TODO with normal permission in /home/${ID} ...
+# ===== [Edit TODO with USER.] =====
+
+# start
+RUN vim +PluginInstall +qall
+
+
+
+
+
+
+
+# finish
+# ==================================
 
 ```
