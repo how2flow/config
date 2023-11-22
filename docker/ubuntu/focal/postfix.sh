@@ -49,7 +49,7 @@ id_config() {
   echo "Finish ID config"
 }
 
-rc_config() {
+bash_config() {
   local bashrc="/home/"${ID}"/.bashrc"
 
   # bashrc user confs
@@ -59,7 +59,7 @@ rc_config() {
     echo "set -o vi" >> "${bashrc}"
   fi
 
-  echo "Finish rc config"
+  echo "Finish bash config"
 }
 
 sudo_config() {
@@ -79,7 +79,7 @@ sudo_config() {
 
 main() {
   id_config
-  rc_config
+  bash_config
   sudo_config
   download_app_configs
 }

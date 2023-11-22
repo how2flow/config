@@ -18,6 +18,8 @@ ENV ID="user" \
 # ===== No Edit =====
 USER root
 RUN /postfix.sh $ID $PASSWORD
+# Use it when you need to distribute an official image
+# RUN /postrm.sh $ID
 # ===================
 
 # TODO with root permission ...
