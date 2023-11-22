@@ -9,7 +9,7 @@ COMPOSE="$(cd $(dirname $0); pwd -P)/docker-compose.yaml"
 CONTAINER_NAME=""
 PROJECT=""
 TAG=${1:-latest}
-VOLUMES=("/mnt/docker/${PROJECT}/${TAG}/..")
+VOLUMES=("/mnt/docker/${PROJECT}/${TAG}/share_data")
 
 if [ $EUID != 0 ]; then
   echo "Run with root permission"
@@ -38,7 +38,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - /mnt/docker/${PROJECT}/${TAG}/..
+      - /mnt/docker/${PROJECT}/${TAG}/share_data:/var/lib/share_data
 __EOF
 
 docker compose up -d
