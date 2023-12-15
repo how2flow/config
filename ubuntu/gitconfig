@@ -16,3 +16,4 @@
   submodule = log
 [http]
   sslVerify = false
+  postBuffer = 52428800
