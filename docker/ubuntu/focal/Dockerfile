@@ -2,7 +2,7 @@
 FROM ubuntu:focal
 LABEL author="Steve Jeong"
 LABEL e-mail="steve@how2flow.net"
-LABEL version="20231122"
+LABEL version="20231219"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
