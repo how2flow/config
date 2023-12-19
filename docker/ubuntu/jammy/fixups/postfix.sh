@@ -18,7 +18,7 @@ download_app_configs() {
   if [ -x "$(command -v wget)" ]; then
     # download default configs
     for idx in ${config_list[@]}; do
-      wget -O "${home}/${idx}" ${WGET_FLAG} "https://raw.githubusercontent.com/how2flow/config/master/ubuntu/overlays/home/user/${idx}"
+      wget -O "${home}/${idx}" ${WGET_FLAG} "https://raw.githubusercontent.com/how2flow/config/master/ubuntu/user/${idx}"
       chown -R "${ID}:${GROUP}" "${home}/${idx}"
     done
 

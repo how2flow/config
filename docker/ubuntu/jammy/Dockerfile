@@ -17,6 +17,6 @@ ENV ID="user" \
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 USER root
-ADD *.sh /
+ADD fixups/*.sh /
 RUN chmod a+x /*.sh
 RUN /prefix.sh
