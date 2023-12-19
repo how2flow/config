@@ -1,0 +1,12 @@
+# udevadm info /dev/gpiomem
+#
+# P: /devices/virtual/../gpiomem
+# N: gpiomem
+# L: 0
+# E: DEVPATH=/devices/virtual/../gpiomem
+# E: DEVNAME=/dev/gpiomem
+# E: MAJOR=xx
+# E: MINOR=0
+# E: SUBSYSTEM=gpiomem
+
+SUBSYSTEM=="gpiomem", GROUP="ioctl", MODE="0660"

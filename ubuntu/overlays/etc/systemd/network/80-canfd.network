@@ -1,0 +1,7 @@
+[Match]
+Name=can0
+
+[CAN]
+BitRate=250000
+DataBitRate=2000000
+FDMode=True

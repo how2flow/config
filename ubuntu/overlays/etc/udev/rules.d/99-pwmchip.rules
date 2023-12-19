@@ -1,0 +1,8 @@
+# udevadm info /sys/class/pwm/pwmchip0
+#
+# P: /devices/platform/../pwm/pwmchip0
+# L: 0
+# E: DEVPATH=/devices/platform/../pwm/pwmchip0
+# E: SUBSYSTEM=pwm
+
+ACTION=="add", SUBSYSTEM=="pwm", GROUP="ioctl" MODE="0660"

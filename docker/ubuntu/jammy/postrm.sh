@@ -9,19 +9,21 @@ GROUP="${3:-user}"
 
 remove_app_configs() {
   local home="/home/"${ID}""
+  local config_list=(".gitconfig" ".tmux.conf" ".vimrc")
 
   if [ -e "/postfix.sh" ]; then
-    rm -rf "${home}"/.git*
-    rm -rf "${home}"/.tmux*
-    rm -rf "${home}"/.vim*
+
+    for idx in ${config_list[@]}; do
+      rm -rf "${home}/${idx}"
+    done
   fi
 }
 
 restore_default_bash_configs() {
-  local bashrc="/home/"${ID}"/.bashrc"
+  local bashrc="/home/${ID}/.bashrc"
   local default="/etc/skel/.bashrc"
 
-  cp "${default}" "${bashrc}"
+  cp ${default} ${bashrc}
 }
 
 main() {
