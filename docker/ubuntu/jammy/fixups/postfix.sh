@@ -26,6 +26,7 @@ download_app_configs() {
     mkdir -p "${home}/.vim/colors"
     git clone "https://github.com/VundleVim/Vundle.vim.git" ${home}/.vim/bundle/Vundle.vim
     wget -O "${home}/.vim/colors/gruvbox.vim" ${WGET_FLAG} "https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim"
+    chown -R "${ID}:${GROUP}" "${home}/.vim"
   fi
 
   echo "Finish Download app configs"
