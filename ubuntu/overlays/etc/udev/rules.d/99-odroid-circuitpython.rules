@@ -4,13 +4,20 @@ SUBSYSTEM=="gpio", ENV{DEVNAME}=="/dev/gpiochip[0-4]", GROUP="odroid", MODE="066
 # I2C
 SUBSYSTEM=="i2c-dev", ENV{DEVNAME}=="/dev/i2c-[0-1]", GROUP="odroid", MODE="0660"
 
-# SERIAL
-ACTION=="add", SUBSYSTEM=="tty", ENV{MAJOR}=="239", ENV{MINOR}=="1", \
-RUN+="/bin/bash -c 'if [ -e /dev/serial0 ]; then rm /dev/serial0; fi; mknod /dev/serial0 c 239 1 -m=0666'"
-ACTION=="add", SUBSYSTEM=="tty", ENV{MAJOR}=="243", ENV{MINOR}=="1", \
-RUN+="/bin/bash -c 'if [ -e /dev/serial0 ]; then rm /dev/serial0; fi; mknod /dev/serial0 c 243 1 -m=0666'"
-ACTION=="add", SUBSYSTEM=="tty", ENV{MAJOR}=="4", ENV{MINOR}=="64", \
-RUN+="/bin/bash -c 'if [ -e /dev/serial0 ]; then rm /dev/serial0; fi; mknod /dev/serial0 c 4 64 -m=0666'"
+# SERIAL - AMLOGIC 4.9.y
+ACTION=="add", SUBSYSTEM=="tty", \
+ENV{MAJOR}=="239", ENV{MINOR}=="1", \
+RUN+="/bin/bash -c 'rm -rf /dev/serial0; mknod /dev/serial0 c $env{MAJOR} $env{MINOR} -m=0660; chgrp odroid /dev/serial0'"
+
+# SERIAL - AMLOGIC 5.15.y
+ACTION=="add", SUBSYSTEM=="tty", \
+ENV{MAJOR}=="243", ENV{MINOR}=="1", \
+RUN+="/bin/bash -c 'rm -rf /dev/serial0; mknod /dev/serial0 c $env{MAJOR} $env{MINOR} -m=0660; chgrp odroid /dev/serial0'"
+
+# SERIAL - ROCKCHIP
+ACTION=="add", SUBSYSTEM=="tty", \
+ENV{MAJOR}=="4", ENV{MINOR}=="64", \
+RUN+="/bin/bash -c 'rm -rf /dev/serial0; mknod /dev/serial0 c $env{MAJOR} $env{MINOR} -m=0660; chgrp odroid /dev/serial0'"
 
 # SPI
 SUBSYSTEM=="spidev", ENV{DEVNAME}=="/dev/spidev0.[0-1]", GROUP="odroid", MODE="0660"
