@@ -128,17 +128,20 @@ let g:airline_theme='hybrid'
 let mapleader = ","
 
 "
-" hot key
+" hot key - only normal mode
 "
 
-map <F10> <C-w><C-v>
-map <tab> <C-w><C-w>
+" open header
+nnoremap t <C-w>gf
+" <F2> ~ <F12>
+nnoremap <F2> :bprevious<CR>
+nnoremap <F3> :bnext<CR>
+nnoremap <F4> :enew<cr>
+nnoremap <F5> :NERDTreeToggle<cr>
+nnoremap <F6> :TagbarToggle<cr>
+nnoremap <F10> <C-w><C-v>
+"Jump between objects added by plug-in
+nnoremap <tab> <C-w><C-w>
 
-nmap <F5> :NERDTreeToggle<cr>
-nmap <F6> :TagbarToggle<cr>
-
-nmap <F2> :bprevious<CR>
-nmap <F3> :bnext<CR>
-nmap <F4> :enew<cr>
-nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>
+nnoremap <leader>bq :bp <BAR> bd #<CR>
+nnoremap <leader>bl :ls<CR>
