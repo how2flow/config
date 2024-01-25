@@ -142,6 +142,7 @@ nnoremap <F6> :TagbarToggle<cr>
 nnoremap <F10> <C-w><C-v>
 "Jump between objects added by plug-in
 nnoremap <tab> <C-w><C-w>
+nnoremap <Space> :bnext<CR>
 
 nnoremap <leader>bq :bp <BAR> bd #<CR>
 nnoremap <leader>bl :ls<CR>
