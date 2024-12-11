@@ -80,11 +80,27 @@ let g:indent_guides_guide_size = 1
 " About ctags & cscope
 "
 
-set csprg=/usr/bin/cscope
-set csto=0
-set cst
-set csverb
-" cs add cscope.out
+" ~/kernel/*/tags,~/u-boot/*/tags;
+set tags=./tags;
+if has("cscope")
+  set csprg=/usr/bin/cscope
+  set cst
+  set csverb
+  set csto=1
+  set cspc=3
+  "add any database in current dir
+  if filereadable("cscope.out")
+    cs add cscope.out
+  "else search cscope.out elsewhere
+  else
+    let cscope_file=findfile("cscope.out", ".;")
+    let cscope_pre=matchstr(cscope_file, ".*/")
+    "echo cscope_file
+    if !empty(cscope_file) && filereadable(cscope_file)
+      exe "cs add" cscope_file cscope_pre
+    endif
+  endif
+endif
 
 " cscope Hot keys
 " https://cdang.tistory.com/80
