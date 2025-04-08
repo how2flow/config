@@ -162,3 +162,9 @@ nnoremap <Space> :bnext<CR>
 
 nnoremap <leader>bq :bp <BAR> bd #<CR>
 nnoremap <leader>bl :ls<CR>
+
+"
+" If host os is not ubuntu, and use VM instead. (25.04.08)
+"
+" autocmd TextYankPost * call writefile(split(getreg('"'), "\n"), '/tmp/vim_buffer', 'b')
+" nnoremap p :let @a = join(readfile('/tmp/vim_buffer', 'b'), "\n") \| normal! "ap<CR>
